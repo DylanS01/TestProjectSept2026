@@ -1,0 +1,17 @@
+body {
+    background-color: black;
+}
+
+h1 {
+    background-color: rgb(30, 30, 30);
+    color: rgb(255,255,255);
+    font-size: 64px;
+    font-family:monospace;
+}
+
+div {
+  background-color: rgb(30, 30, 30);
+  color: rgb(255,255,255);
+  font-size: 48px;
+  font-family:monospace;
+}
