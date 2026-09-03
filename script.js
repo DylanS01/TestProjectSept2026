@@ -22,3 +22,19 @@ promise.then(function (value) {
 
 document.getElementById("numberdisplay").innerHTML = 50;
 // Test Change
+
+const width = 41;
+const height = 34;
+let area = width * height;
+let doubled = area * 2;
+let newArea = area / 5
+let originalAreaIsGreater = false;
+
+console.log("original area: " + (area));
+console.log("doubled area: " + (area));
+console.log("area divided by 5: " + (newArea));
+
+if (area > newArea){
+    originalAreaIsGreater = true;
+}
+console.log(originalAreaIsGreater);
