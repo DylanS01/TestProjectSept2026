@@ -21,8 +21,8 @@ promise.then(function (value) {
     });
 
 document.getElementById("numberdisplay").innerHTML = 50;
-// Test Change
 
+// in-class exercise 9/3
 const width = 41;
 const height = 34;
 let area = width * height;
