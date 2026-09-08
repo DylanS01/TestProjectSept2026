@@ -38,3 +38,6 @@ if (area > newArea){
     originalAreaIsGreater = true;
 }
 console.log(originalAreaIsGreater);
+
+const testArray = ["Test1", "Test2", "Test3"];
+const testObj = [car = "TestCar", color = "Black", year = "2000"];
