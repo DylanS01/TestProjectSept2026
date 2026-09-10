@@ -61,8 +61,8 @@ for (i in testArray){
     consolePageLog(testArray[i]);
 }
 consolePageLog("Conditional for loop");
-for (i in testArray){
-    consolePageLog(testArray[i]); i < testArray.length; i++;
+for (i in testArray, i < testArray.length, i++){
+    consolePageLog(testArray[i]);
 }
 consolePageLog("While loop");
 let testValue1 = 0;
@@ -86,3 +86,34 @@ function testFunction(input){
 };
 
 consolePageLog(testFunction(5));
+
+class Student {
+  constructor(name, enrolled, gpa) {
+    this.name = name;
+    this.enrolled = enrolled
+    this.gpa = gpa;
+  }
+};
+
+function passingCheck(student){
+    if (student.gpa > 2){
+        return "passing";
+    }
+    else
+        return "not passing";
+}
+
+let roster = [];
+let newStudent1 = new Student("Jack", true, 2.2);
+roster.push(newStudent1);
+consolePageLog(roster[0].name);
+
+let randomGPA = Math.random() * 3;
+let randomNames = ["John", "Abby", "Bob", "Tessa", "Jill"];
+for (i in randomNames){
+    let newStudent = new Student(randomNames[i], randomGPA, true);
+    roster.push(newStudent);
+}
+for (i in roster){
+    consolePageLog(i.name);
+}
