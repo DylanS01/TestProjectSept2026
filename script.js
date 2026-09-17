@@ -189,3 +189,65 @@ let filteredStudents = testStudents.filter(function(student){
     consolePageLog(student.name, student.gpa, student.isEnrolled);
     return student.gpa;
 });
+
+consolePageLog("reduce function:");
+const totalGPAs = filteredStudents.reduce(function(sum, gpa){
+    return sum + gpa;
+}, 0); // 0 is the interator or current sum to start at
+consolePageLog(totalGPAs);
+
+const courses = [
+	{
+		name: "INF-100",
+		credits: 3,
+		isOpen: true,
+	},
+	{
+		name: "INF-200",
+		credits: 2,
+		isOpen: true,
+	},
+	{
+		name: "INF-300",
+		credits: 3,
+		isOpen: false,
+	},
+];
+
+let courseNames = courses.map(function(course){
+    return course.name;
+});
+
+courseNames.forEach(function(course, i){
+    consolePageLog(course);
+});
+
+let credits = courses.map(function(course){
+    return course.credits;
+});
+
+let creditTotal = credits.reduce(function(sum, credits){
+    return sum + credits;
+}, 0);
+consolePageLog("Credit Total: " + creditTotal);
+
+let avgCredits = (creditTotal / courses.length);
+consolePageLog("Average Credits: " + avgCredits);
+
+let highCreditCourses = courses.filter(function(course){
+    return course.credits > 2;
+});
+
+consolePageLog("High Credit Courses:");
+highCreditCourses.forEach(function(course, i){
+    consolePageLog(course.name + ", " + course.credits);
+});
+
+let lowCreditCourses = courses.filter(function(course){
+    return course.credits <= 2;
+});
+
+consolePageLog("Low Credit Courses:");
+lowCreditCourses.forEach(function(course, i){
+    consolePageLog(course.name + ", " + course.credits);
+});
