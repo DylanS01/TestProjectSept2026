@@ -184,10 +184,8 @@ enrolledStudents.forEach(function(student, i){
 consolePageLog("In-Class Exercise:")
 
 let filteredStudents = testStudents.filter(function(student){
-    return student.gpa > 2.0;
+    return student.gpa > 2.0 && student.isEnrolled;
 }).map(function(student){
+    consolePageLog(student.name, student.gpa, student.isEnrolled);
     return student.gpa;
-});
-filteredStudents.forEach(function(gpa, i){
-    consolePageLog(gpa);
 });
