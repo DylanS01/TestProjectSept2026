@@ -1,3 +1,7 @@
+/* Notes
+    Functions can be reassigned...
+*/
+
 console.log("Test");
 document.getElementById("testdiv").innerHTML = "I changed this";
 
@@ -115,5 +119,56 @@ for (i in randomNames){
     roster.push(newStudent);
 }
 for (i in roster){
-    consolePageLog(i.name);
+    consolePageLog(roster[i].name + ", Enrolled: " + Boolean(roster[i].enrolled) + ", GPA: " + roster[i].gpa);
 }
+
+//* Anonymous Function
+let anonFunction = (x) => {consolePageLog("Anonymous Function Return: " + Number(x + 1))};
+anonFunction(5);
+
+//* Function in Object
+let tree = {
+    type: "Spruce",
+    age: 26,
+    birthday: 2000,
+    getAge: function(){
+        return this.age;
+    }
+};
+
+let masterBrain = {
+    level: 1,
+    logInit: function(){consolePageLog("Master Brain Initialized");},
+    printLevel: function(){consolePageLog("Master Brain Level: " + this.level);},
+    greet: function(){consolePageLog("Master Brain says hello");},
+};
+
+function levelUpBrain(brain, amount){
+    brain.level = brain.level + amount;
+    consolePageLog(brain, " levelled up by : " + amount);
+};
+
+masterBrain.logInit();
+masterBrain.printLevel();
+masterBrain.greet();
+levelUpBrain(masterBrain, 5);
+masterBrain.printLevel();
+
+//Array of Objects
+let testStudents = [
+    {name: "John", gpa: 2.1, isEnrolled: true},
+    {name: "Jane", gpa: 2.5, isEnrolled: true},
+    {name: "Ray", gpa: 3.0, isEnrolled: false},
+    {name: "Paul", gpa: 3.6, isEnrolled: true}
+];
+
+consolePageLog("forEach loop:");
+testStudents.forEach(function(student, i){
+    consolePageLog(i + ", " + student.name);
+});
+
+consolePageLog("Map function:");
+let studentNames = testStudents.map(function(student){
+    return student.name
+});
+consolePageLog(studentNames);
