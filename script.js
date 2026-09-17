@@ -159,7 +159,7 @@ let testStudents = [
     {name: "John", gpa: 2.1, isEnrolled: true},
     {name: "Jane", gpa: 2.5, isEnrolled: true},
     {name: "Ray", gpa: 3.0, isEnrolled: false},
-    {name: "Paul", gpa: 3.6, isEnrolled: true}
+    {name: "Paul", gpa: 1.5, isEnrolled: true}
 ];
 
 consolePageLog("forEach loop:");
@@ -172,3 +172,22 @@ let studentNames = testStudents.map(function(student){
     return student.name
 });
 consolePageLog(studentNames);
+
+consolePageLog("Array filter:");
+let enrolledStudents = testStudents.filter(function(student){
+    return student.isEnrolled; //return true or false
+});
+enrolledStudents.forEach(function(student, i){
+    consolePageLog(i + ", " + student.name);
+});
+
+consolePageLog("In-Class Exercise:")
+
+let filteredStudents = testStudents.filter(function(student){
+    return student.gpa > 2.0;
+}).map(function(student){
+    return student.gpa;
+});
+filteredStudents.forEach(function(gpa, i){
+    consolePageLog(gpa);
+});
